@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ĐĐ Music</title>
+  <link rel="icon" href="https://emojiapi.dev/api/v1/headphone/64.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>🎵 Nhạc Của Tui</h1>
+  <button onclick="toggleTheme()">🌓</button>
+</header>
+
+<input id="search" placeholder="🔍 Tìm bài nhạc...">
+
+<div class="moods">
+  <button onclick="filterMood('all')">Tất cả</button>
+  <button onclick="filterMood('Buồn')">Buồn</button>
+  <button onclick="filterMood('Chill')">Chill</button>
+  <button onclick="filterMood('Thư giãn')">Thư giãn</button>
+</div>
+
+<h2>🎶 Playlist</h2>
+<div id="playlist" class="grid"></div>
+
+<h2>🕒 Nghe gần đây</h2>
+<div id="recent" class="grid"></div>
+
+<a href="favorites.html">❤️ Nhạc yêu thích</a> | 
+<a href="about.html">ℹ️ About</a>
+
+<script src="js/app.js"></script>
+</body>
+</html>

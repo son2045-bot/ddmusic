@@ -1,0 +1,22 @@
+{
+  "songs": [
+    {
+      "id": 1,
+      "title": "Nhạc buồn đêm mưa",
+      "mood": "Buồn",
+      "tg": "dGVuX2NoYW5uZWwvMTAx"
+    },
+    {
+      "id": 2,
+      "title": "Nhạc chill cà phê",
+      "mood": "Chill",
+      "tg": "dGVuX2NoYW5uZWwvMTAy"
+    },
+    {
+      "id": 3,
+      "title": "Nhạc thư giãn không lời",
+      "mood": "Thư giãn",
+      "tg": "dGVuX2NoYW5uZWwvMTAz"
+    }
+  ]
+}
