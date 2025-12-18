@@ -71,11 +71,10 @@ const params=new URLSearchParams(window.location.search);
 const id=params.get("id");
 const song=allSongs.find(s=>s.id==id);
 if(song){
-  document.getElementById("title")?.innerText=song.title;
+  document.getElementById("title")?.innerText = song.title;
   saveRecent(song);
-  setTimeout(()=>{
-    document.getElementById("player")?.innerHTML=`
+  setTimeout(() => {
+    document.getElementById("player")?.innerHTML = `
       <script async src="https://telegram.org/js/telegram-widget.js?22"
-      data-telegram-post="${decodeTG(song.tg)}" data-width="100%"></script>`;
-  },2500);
-}
+              data-telegram-post="${song.tg}" data-width="100%"></script>`;
+  }, 1000);
