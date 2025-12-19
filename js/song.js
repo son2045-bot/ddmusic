@@ -1,27 +1,28 @@
-// Lấy id bài hát từ URL, ví dụ: song.html?id=1
-const params = new URLSearchParams(window.location.search);
-const songId = params.get("id");
+const id = new URLSearchParams(location.search).get("id");
 
 fetch("data/data.json")
-  .then(res => res.json())
+  .then(r => r.json())
   .then(data => {
-    const song = data.find(s => s.id == songId);
+    const song = data.songs.find(s => s.id == id);
+    if (!song) return;
 
-    if (!song) {
-      document.body.innerHTML = "<h2>Không tìm thấy bài nhạc</h2>";
-      return;
-    }
-
-    document.getElementById("song-title").textContent = song.title;
-    document.getElementById("song-artist").textContent = song.artist;
+    document.getElementById("title").innerText = song.title;
 
     document.getElementById("player").innerHTML = `
       <iframe
-        src="${song.telegram}"
+        src="${song.telegram}?embed=1"
         width="100%"
         height="120"
         frameborder="0"
         allow="autoplay">
       </iframe>
     `;
+
+    saveRecent(song.id);
   });
+
+function saveRecent(id) {
+  let recent = JSON.parse(localStorage.getItem("recent") || "[]");
+  recent = [id, ...recent.filter(x => x !== id)].slice(0, 5);
+  localStorage.setItem("recent", JSON.stringify(recent));
+}
