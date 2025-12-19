@@ -1,3 +1,5 @@
+console.log("app.js đã chạy");
+
 let allSongs = [];
 
 fetch("data/data.json")
